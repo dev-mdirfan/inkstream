@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "inkstream"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Mohd Irfan"]
   spec.email         = ["mdirfan5702@gmail.com"]
 
