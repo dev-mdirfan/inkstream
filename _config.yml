@@ -24,9 +24,9 @@ twitter:
 social: # jekyll-seo-tag > social overrides
     name: Mohd Irfan # jekyll-seo-tag > real name
     links: # jekyll-seo-tag > social aliases (sameAs)
-        - https://twitter.com/mohdirfan57
-        - https://www.linkedin.com/in/mdirfan57
-        - https://github.com/dev-mdirfan
+        - https://twitter.com/mohdirfan57 # Add your Twitter URL
+        - https://www.linkedin.com/in/mdirfan57 # Add your LinkedIn URL
+        - https://github.com/dev-mdirfan # Add your GitHub URL
 
 # 4. Jekyll settings
 # sass:
@@ -41,16 +41,15 @@ collections:
         title: Posts # Needed for Siteleaf
         output: true
         description: 'My thoughts and ideas' # The post list page content
-        feature_text: |
-            Welcome to the blog
-        feature_image: 'https://picsum.photos/2560/600?image=866'
+        pin: true # Pin the post to the top of the list
+        image: 'https://picsum.photos/2560/600?image=866'
 
 # 6. Jekyll defaults
 defaults:
     - scope:
           path: ''
       values:
-          image: '/assets/default-social-image.png' # Default image for sharing
+          image: '/assets/images/posts/default-post-img.jpg' # Default image for sharing
     - scope:
           path: ''
           type: 'posts'

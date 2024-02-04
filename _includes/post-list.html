@@ -1,34 +1,59 @@
 {% if paginator.posts %}
 {% for page in paginator.posts %}
-<div class="item mb-5">
-    <div class="media">
-        <img class="mr-3 img-fluid post-thumb d-none d-md-flex"
-            src="{{ 'assets/images/blog/blog-post-thumb-6.jpg' | relative_url }}" alt="image">
-        <div class="media-body">
-            <h3 class="title mb-1"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
-            <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">5 min
-                    read</span><span class="comment"><a href="#">4 comments</a></span></div>
-            <div class="intro">{{ page.excerpt | markdownify | truncatewords: 60 }}.</div>
-            <a class="more-link" href="blog-post.html">Read more &rarr;</a>
-        </div><!--//media-body-->
-    </div><!--//media-->
-</div><!--//item-->
+{% capture words %}
+{{ page.content | number_of_words }}
+{% endcapture %}
+<div class="card shadow-sm my-4">
+    <div class="d-flex justify-content-between">
+        <img class="card-img-top" src="{{ page.image | relative_url }}" alt="{{ page.title }}"
+            style="width: 250px; object-fit: cover;">
+        <div class="card-body">
+            <h3 class="card-title">
+                <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+            </h3>
+            <p class="card-text">{{ page.excerpt | markdownify | truncatewords: 42 }}</p>
+            <a href="{{ site.baseurl }}{{ page.url }}" class="btn btn-primary">Read more &rarr;</a>
+        </div>
+    </div>
+
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <span class="date">Published on {{ page.date | date: "%b %-d, %Y" }}</span>
+        <span class="comment"><a href="#">4 comments</a></span>
+        <span class="time align-content-end">
+            <i class="fas fa-clock fa-fw mr-1"></i>{{ words | divided_by: 180 | append: ' min read' }} &bull; {{ words
+            }}
+            words
+        </span>
+    </div>
+</div>
 {% endfor %}
 {% include post-pagination.html %}
 {% else %}
 {% for page in site.posts %}
-<div class="item mb-5">
-    <div class="media">
-        <img class="mr-3 img-fluid post-thumb d-none d-md-flex"
-            src="{{ 'assets/images/blog/blog-post-thumb-5.jpg' | relative_url }}" alt="image">
-        <div class="media-body">
-            <h3 class="title mb-1"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
-            <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">5 min
-                    read</span><span class="comment"><a href="#">4 comments</a></span></div>
-            <div class="intro">{{ page.excerpt | markdownify | truncatewords: 60 }}.</div>
-            <a class="more-link" href="blog-post.html">Read more &rarr;</a>
-        </div><!--//media-body-->
-    </div><!--//media-->
-</div><!--//item-->
+{% capture words %}
+{{ page.content | number_of_words }}
+{% endcapture %}
+<div class="card shadow-sm my-4">
+    <div class="d-flex justify-content-between">
+        <img class="card-img-top" src="{{ page.image | relative_url }}" alt="{{ page.title }}"
+            style="width: 250px; object-fit: cover;">
+        <div class="card-body">
+            <h3 class="card-title">
+                <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+            </h3>
+            <p class="card-text">{{ page.excerpt | markdownify | truncatewords: 42 }}</p>
+            <a href="{{ site.baseurl }}{{ page.url }}" class="btn btn-primary">Read more &rarr;</a>
+        </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <span class="date">Published on {{ page.date | date: "%b %-d, %Y" }}</span>
+        <span class="comment"><a href="#">4 comments</a></span>
+        <span class="time align-content-end">
+            <i class="fas fa-clock fa-fw mr-1"></i>{{ words | divided_by: 180 | append: ' min read' }} &bull; {{ words
+            }}
+            words
+        </span>
+    </div>
+</div>
 {% endfor %}
 {% endif %}

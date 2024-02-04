@@ -9,40 +9,10 @@ layout: default
 
     <section class="blog-list px-3 py-5 p-md-5">
         <div class="container">
-            <h1>Blog</h1>
+            <!-- Page heading and total number of posts -->
+            <h1 class="font-weight-bold pb-3">Blog</h1>
             <hr>
-            <p>Total Posts - {{ paginator.total_posts }}</p>
-            {% if paginator.posts %}
-            {% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
-            <div class="item mb-5">
-                <div class="media">
-                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex"
-                        src="{{ 'assets/images/blog/blog-post-thumb-7.jpg' | relative_url }}" alt="image">
-                    <div class="media-body">
-                        <h3 class="title mb-1"><a href="blog-post.html">{{ collectiondata.title }}</a></h3>
-                        <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">5 min
-                                read</span><span class="comment"><a href="#">4 comments</a></span></div>
-                        <div class="intro">{{ collectiondata.description | markdownify }}</div>
-                        <a class="more-link" href="blog-post.html">Read more &rarr;</a>
-                    </div><!--//media-body-->
-                </div><!--//media-->
-            </div>
-            {% else %}
-            <div class="item mb-5">
-                <div class="media">
-                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex"
-                        src="assets/images/blog/blog-post-thumb-7.jpg" alt="image">
-                    <div class="media-body">
-                        <h3 class="title mb-1"><a href="blog-post.html">{{ page.title }}</a></h3>
-                        <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">5 min
-                                read</span><span class="comment"><a href="#">4 comments</a></span></div>
-                        <div class="intro">{{ content }}</div>
-                        <a class="more-link" href="blog-post.html">Read more &rarr;</a>
-                    </div><!--//media-body-->
-                </div><!--//media-->
-            </div>
-            {% endif %}
-
+            <p class="text-muted text-uppercase mb-4">Found {{ paginator.total_posts }} posts</p>
             {% include post-list.html %}
 
 
