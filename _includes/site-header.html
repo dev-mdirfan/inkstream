@@ -1,0 +1,46 @@
+<header class="header text-center">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navigation" class="collapse navbar-collapse flex-column">
+            <!-- Profile Section Start -->
+            <div class="profile-section pt-3 pt-lg-0">
+                <img class="profile-image mb-3 rounded-circle mx-auto"
+                    src="{{ 'assets/images/profile.png' | absolute_url }}" alt="image">
+                <h3 class="blog-name pt-2 mb-3"><a href="index.html">Inkstream Theme</a></h3>
+
+                <div class="bio mb-3">
+                    Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also
+                    provide a link to the about page.
+                    <br>
+                    <strong>Email: &nbsp;</strong><a href="mailto:{{ site.email }}">
+                        {{ site.email }}
+                    </a>
+                </div>
+                <!-- Bio Section Start-->
+                <ul class="social-list list-inline py-3 mx-auto">
+                    <!-- Social List -->
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+                </ul>
+                <!-- Bio Section end-->
+                <hr style="background: white;">
+            </div>
+            <!-- Profile Section End-->
+
+
+            {% include nav-header.html %}
+
+            <div class="my-2 my-md-3">
+                <a class="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,123 @@
+### Site Configuration ###
+
+# 1. Files excluded from Jekyll builds
+exclude:
+    - README.md
+    - LICENSE
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - inkstream.gemspec
+    - .jekyll-cache
+
+# 2. Installed Gems
+plugins:
+    - jekyll-paginate
+    - jekyll-seo-tag
+
+# 3. Gem settings
+paginate: 5 # jekyll-paginate > items per page
+paginate_path: blog/:num # jekyll-paginate > blog page
+author: MohdIrfan # jekyll-seo-tag > default author
+twitter:
+    username: mohdirfan57 # jekyll-seo-tag > Owners twitter username
+social: # jekyll-seo-tag > social overrides
+    name: Mohd Irfan # jekyll-seo-tag > real name
+    links: # jekyll-seo-tag > social aliases (sameAs)
+        - https://twitter.com/mohdirfan57
+        - https://www.linkedin.com/in/mdirfan57
+        - https://github.com/dev-mdirfan
+
+# 4. Jekyll settings
+# sass:
+#     style: compressed # Style compression
+# permalink: pretty # Permalink style (/YYYY/MM/DD/page-name/)
+# excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+# timezone: Europe/London # Timezone for blog posts and alike
+
+# 5. Jekyll collections settings
+collections:
+    posts:
+        title: Posts # Needed for Siteleaf
+        output: true
+        description: 'My thoughts and ideas' # The post list page content
+        feature_text: |
+            Welcome to the blog
+        feature_image: 'https://picsum.photos/2560/600?image=866'
+
+# 6. Jekyll defaults
+defaults:
+    - scope:
+          path: ''
+      values:
+          image: '/assets/default-social-image.png' # Default image for sharing
+    - scope:
+          path: ''
+          type: 'posts'
+      values:
+          layout: post # Set the default layout for posts
+    - scope:
+          path: ''
+          type: 'pages'
+      values:
+          layout: page # Set the default layout for pages
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+lang: en # Set the site language
+title: 'Inkstream' # Site name or title, also used in jekyll-seo-tag
+logo: '/assets/images/logos/logo.svg' # Site logo, also used in jekyll-seo-tag
+description: 'Inkstream is a sleek and modern Jekyll theme tailored for bloggers seeking a seamless platform to express their ideas and stories. With its elegant design and intuitive features, Inkstream facilitates the continuous flow of content creation, empowering users to share their thoughts effortlessly.' # Site description and default description, also used in jekyll-seo-tag
+url: 'https://inkstream.netlify.app' # Site url, also used in jekyll-seo-tag
+baseurl: ''
+repo: 'https://github.com/dev-mdirfan/inkstream' # Site repository, also used in jekyll-seo-tag
+email: 'mdirfan5702@gmail.com'
+# short_name: "Al" # The web application short name, defaults to the site title
+css_inline: false # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+
+# 8. Site favicons & manifest icons
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+    16: '/assets/logos/logo@16px.png'
+    32: '/assets/logos/logo@32px.png'
+    96: '/assets/logos/logo@96px.png'
+    120: '/assets/logos/logo@120px.png'
+    144: '/assets/logos/logo@144px.png'
+    180: '/assets/logos/logo@180px.png'
+    512: '/assets/logos/logo@512px.png'
+    1024: '/assets/logos/logo@1024px.png'
+
+# 9. Site navigation
+navigation_header:
+    - title: Home
+      url: /
+      icon: home
+    - title: Blog
+      url: /blog/
+      icon: blog
+    - title: About Me
+      url: /about/
+      icon: user
+
+navigation_footer:
+    - title: Mohd Irfan
+      url: https://mdirfan.vercel.app
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+    Twitter: https://twitter.com/mohdirfan57
+    LinkedIn: https://www.linkedin.com/in/mdirfan57
+    GitHub: https://github.com/dev-mdirfan
+    stackoverflow: https://stackoverflow.com/users/13520260/mohd-irfan
+    codepen: https://codepen.io/mohdirfan57
+# sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
+#     Twitter: '#0d94e7'
+#     facebook: '#3B5998'
+#     Email: true
+
+# # Load custom fonts from fonts.google.com etc
+# #
+# # TIP: Try to keep the number of urls as low to reduce the performance cost
+# #      If multiple fonts can be requested in a single url opt for this
+# fonts:
+#     preconnect_urls:
+#         - https://fonts.gstatic.com
+#     font_urls:
+#         - https://use.fontawesome.com/releases/v5.7.1/js/all.js

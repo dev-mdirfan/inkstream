@@ -1,0 +1,12 @@
+<footer class="footer text-center py-2 theme-bg-dark" style="position: fixed; right: 0; left: 280px; bottom: 0;">
+    {% if site.navigation_footer %}
+    <small class="copyright">
+        Created by <i class="fas fa-heart" style="color: #e62406;"></i> by
+        <a href="{{ site.navigation_footer[0] }}" target="_blank">
+            XYZ
+        </a> for developers
+    </small>
+    {% else %}
+        {% include site-footer-default.html %}
+    {% endif %}
+</footer>

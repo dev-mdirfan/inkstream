@@ -1,0 +1,25 @@
+{% if site.navigation_header %}
+{% assign nav = site.navigation_header %}
+<nav>
+    <ul class="navbar-nav flex-column text-left">
+        {% for item in nav %}
+        {% if item.url contains '://' %}
+        {% assign url = item.url %}
+        {% else %}
+        {% assign url = item.url | relative_url %}
+        {% endif %}
+        {% assign icon = item.icon %}
+        <li class="nav-item {% if item.url == page.url %} active {% endif %}">
+            <a class="nav-link" href="{{ url }}"><i class="fas fa-{{ icon }} fa-fw mr-2"></i>
+                {{ item.title }}
+                {% if item.url == page.url %}
+                <span class="sr-only">(current)</span>
+                {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% else %}
+{% include nav-default.html %}
+{% endif %}
