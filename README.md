@@ -1,10 +1,36 @@
 # inkstream
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+Welcome to a brand new Jekyll theme!
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+**What Is Inkstream?**
 
-TODO: Delete this and the text above, and describe your gem
+Inkstream is a Jekyll theme for creating a personal blog. It is a fork of the [Minima](https://github.com/dev-mdirfan/inkstream/fork) theme. It is designed to be a simple, clean, and responsive theme for your personal blog.
+
+Preview the theme to see what it looks like, or even use it today. You can also view the theme's [live demo](https://inkstream.netlify.app/).
+
+![Inkstream theme preview](/screenshot.png)
+
+**Features**
+
+- Clean and minimal design
+- Responsive and mobile-friendly
+- Syntax highlighting
+- Pagination
+- Atom feed
+<!-- - SEO optimized
+- Google Analytics
+- Disqus comments -->
+
+**Directory Structure**
+
+```plaintext
+inkstream
+├── _includes
+├── _layouts
+├── _sass
+├── assets
+└── _config.yml
+```
 
 ## Installation
 
@@ -22,11 +48,15 @@ theme: inkstream
 
 And then execute:
 
+    ```bash
     $ bundle
+    ```
 
 Or install it yourself as:
 
+    ```bash
     $ gem install inkstream
+    ```
 
 ## Usage
 
