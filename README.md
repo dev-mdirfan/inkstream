@@ -61,15 +61,15 @@ theme: inkstream
 
 And then execute:
 
-    ```bash
-    $ bundle
-    ```
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    ```bash
-    $ gem install inkstream
-    ```
+```bash
+gem install inkstream
+```
 
 ## Usage
 
