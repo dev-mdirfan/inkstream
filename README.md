@@ -1,4 +1,4 @@
-# Inkstream
+# Inkstream [![Gem Version](https://badge.fury.io/rb/inkstream.svg)](https://badge.fury.io/rb/inkstream)
 
 Welcome to a brand new Jekyll theme!
 
