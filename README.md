@@ -1,4 +1,4 @@
-# inkstream
+# Inkstream
 
 Welcome to a brand new Jekyll theme!
 
