@@ -9,26 +9,45 @@
         <div id="navigation" class="collapse navbar-collapse flex-column">
             <!-- Profile Section Start -->
             <div class="profile-section pt-3 pt-lg-0">
-                <img class="profile-image mb-3 rounded-circle mx-auto"
-                    src="{{ 'assets/images/profile.png' | absolute_url }}" alt="image">
-                <h3 class="blog-name pt-2 mb-3"><a href="index.html">Inkstream's Blog</a></h3>
+                <img class="profile-image mb-3 rounded-circle mx-auto" src="{{ site.logo | relaive_url }}" alt="image">
+                <h3 class="blog-name pt-2 mb-3"><a href="{{ site.navigation_header[0].url }}">{{ site.title }}'s
+                        Blog</a></h3>
 
                 <div class="bio mb-3">
-                    Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also
-                    provide a link to the about page.
-                    <br>
-                    <strong>Email: &nbsp;</strong><a href="mailto:{{ site.email }}">
-                        {{ site.email }}
-                    </a>
+                    Hi, my name is {{ site.author.name }}.
+                    <p>
+                        {{ site.author.bio }}
+                    </p>
+                    <p>I am a {{ site.author.profession }}.</p>
+                    <p>
+                        <strong>Email: &nbsp;</strong><a href="mailto:{{ site.email }}">
+                            {{ site.author.email }}
+                        </a>
+                    </p>
                 </div>
                 <!-- Bio Section Start-->
                 <ul class="social-list list-inline py-3 mx-auto">
                     <!-- Social List -->
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+                    {% if site.social_links.Twitter %}
+                    <li class="list-inline-item"><a href="{{ site.social_links.Twitter }}"><i
+                                class="fab fa-twitter fa-fw"></i></a></li>
+                    {% endif %}
+                    {% if site.social_links.LinkedIn %}
+                    <li class="list-inline-item"><a href="{{ site.social_links.LinkedIn }}"><i
+                                class="fab fa-linkedin-in fa-fw"></i></a></li>
+                    {% endif %}
+                    {% if site.social_links.Github %}
+                    <li class="list-inline-item"><a href="{{ site.social_links.GitHub }}"><i
+                                class="fab fa-github-alt fa-fw"></i></a></li>
+                    {% endif %}
+                    {% if site.social_links.Stackoverflow %}
+                    <li class="list-inline-item"><a href="{{ site.social_links.Stackoverflow }}"><i
+                                class="fab fa-stack-overflow fa-fw"></i></a></li>
+                    {% endif %}
+                    {% if site.social_links.Codepen %}
+                    <li class="list-inline-item"><a href="{{ site.social_links.Codepen }}"><i
+                                class="fab fa-codepen fa-fw"></i></a></li>
+                    {% endif %}
                 </ul>
                 <!-- Bio Section end-->
                 <hr style="background: white;">
@@ -39,7 +58,8 @@
             {% include nav-header.html %}
 
             <div class="my-2 my-md-3">
-                <a class="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
+                <a class="btn btn-primary" href="{{ site.download_resume | relative_url}}" target="_blank"
+                    download="{{ site.title }}-resume">Download Resume</a>
             </div>
         </div>
     </nav>
