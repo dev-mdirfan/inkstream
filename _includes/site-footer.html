@@ -1,12 +1,23 @@
 <footer class="footer text-center py-2 theme-bg-dark" style="position: fixed; right: 0; left: 280px; bottom: 0;">
     {% if site.navigation_footer %}
-    <small class="copyright">
-        Created by <i class="fas fa-heart" style="color: #e62406;"></i> by
-        <a href="{{ site.navigation_footer[0] }}" target="_blank">
-            XYZ
-        </a> for developers
-    </small>
+    <div class="d-flex mx-3 justify-content-between">
+        <small class="copyright">
+            &copy; <a href="{{ site.url }}">{{ site.title }}</a> {{ site.time | date: '%Y' }}
+        </small>
+        <small class="text-center" style="right: 0;">
+            <a href="{{ site.repo }}" target="_blank">
+                <i class="fab fa-github-alt fa-fw"></i>
+                Fork Repo
+            </a>
+        </small>
+        <small class="copyright">
+            Created by
+            <a href="{{ site.navigation_footer[0].url }}" target="_blank">
+                {{ site.navigation_footer[0].title }}
+            </a> for developers <i class="fas fa-heart" style="color: #e62406;"></i>
+        </small>
+    </div>
     {% else %}
-        {% include site-footer-default.html %}
+    {% include site-footer-default.html %}
     {% endif %}
 </footer>
