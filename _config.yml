@@ -65,7 +65,7 @@ defaults:
 encoding: utf-8 # Make sure the encoding is right
 lang: en # Set the site language
 title: 'Inkstream' # Site name or title, also used in jekyll-seo-tag
-logo: '/assets/images/logos/logo.svg' # Site logo, also used in jekyll-seo-tag
+logo: '/assets/logo/logo.jpg' # Site logo, also used in jekyll-seo-tag
 description: 'Inkstream is a sleek and modern Jekyll theme tailored for bloggers seeking a seamless platform to express their ideas and stories. With its elegant design and intuitive features, Inkstream facilitates the continuous flow of content creation, empowering users to share their thoughts effortlessly.' # Site description and default description, also used in jekyll-seo-tag
 url: 'https://inkstream.netlify.app' # Site url, also used in jekyll-seo-tag
 baseurl: ''
@@ -76,14 +76,14 @@ css_inline: false # Will insert all styles into a single <style> block in the <h
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
-    16: '/assets/logos/logo@16px.png'
-    32: '/assets/logos/logo@32px.png'
-    96: '/assets/logos/logo@96px.png'
-    120: '/assets/logos/logo@120px.png'
-    144: '/assets/logos/logo@144px.png'
-    180: '/assets/logos/logo@180px.png'
-    512: '/assets/logos/logo@512px.png'
-    1024: '/assets/logos/logo@1024px.png'
+    '16': '/assets/favicon/favicon-16x16.png'
+    '32': '/assets/favicon/favicon-32x32.png'
+    '150': '/assets/favicon/mstile-150x150.png'
+    '180': '/assets/favicon/apple-touch-icon.png'
+    '192': '/assets/favicon/android-chrome-192x192.png'
+    '512': '/assets/favicon/android-chrome-512x512.png'
+    webmanifest: '/assets/favicon/site.webmanifest'
+    safari: '/assets/favicon/safari-pinned-tab.svg'
 
 # 9. Site navigation
 navigation_header:
@@ -99,13 +99,22 @@ navigation_header:
 
 navigation_footer:
     - title: Mohd Irfan
-      url: https://mdirfan.vercel.app
-social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+      url: https://github.com/dev-mdirfan/
+
+# 10. Your Personal Info (Social links - Appears in sidebar)
+author:
+    name: Sarah Parker # Your name (required)
+    bio: 'A passionate web developer and designer.' # Short bio or description, You can also provide a link to the about page. (required)
+    profession: 'Web Developer' # Your profession (optional)
+    location: 'India' # Your location (optional)
+    email: your@gmail.com # Your email address (optional)
+social_links: # Set the urls then uncomment and comment out as desired
     Twitter: https://twitter.com/mohdirfan57
     LinkedIn: https://www.linkedin.com/in/mdirfan57
     GitHub: https://github.com/dev-mdirfan
-    stackoverflow: https://stackoverflow.com/users/13520260/mohd-irfan
-    codepen: https://codepen.io/mohdirfan57
+    Stackoverflow: https://stackoverflow.com/users/13520260/mohd-irfan
+    Codepen: https://codepen.io/mohdirfan57
+download_resume: '/assets/resume/resume.pdf' # Add the path to your resume
 # sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
 #     Twitter: '#0d94e7'
 #     facebook: '#3B5998'
