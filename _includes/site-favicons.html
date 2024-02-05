@@ -1,7 +1,12 @@
 {% if site.favicons %}
-{% for icon in site.favicons %}
-<link rel="icon" type="image/png" href="{{ icon[1] | relative_url }}" sizes="{{ icon[0] }}x{{ icon[0] }}">
-<link rel="apple-touch-icon" sizes="{{ icon[0] }}x{{ icon[0] }}" href="{{ icon[1] | relative_url }}">
-{% endfor %}
-{% endif %}
+{% assign icon = site.favicons %}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ icon.180 | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ icon.32 | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ icon.16 | relative_url }}">
+<link rel="manifest" href="{{ icon.webmanifest | relative_url }}">
+<link rel="mask-icon" href="{{ icon.safari | relative_url }}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+{% else %}
 <link rel="shortcut icon" href="{{ site.avatarurl + '?s=32' | default: site.logo | relative_url }}">
+{% endif %}
