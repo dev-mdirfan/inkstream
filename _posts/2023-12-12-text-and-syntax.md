@@ -1,20 +1,32 @@
 ---
 title: Markdown Text and Syntax Highlighting
 image: /assets/images/posts/text-syntax.jpg
+pinned: true
 ---
 
 Markdown is a lightweight markup language with plain-text-formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
 
 ## Headers
 
-```markdown
+{% highlight javascript %}
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+{% endhighlight %}
+
+
+{% highlight markdown %}
 # Header 1
 ## Header 2
 ### Header 3
 #### Header 4
 ##### Header 5
 ###### Header 6
-```
+{% endhighlight %}
 
 ## Emphasis
 
@@ -94,10 +106,10 @@ function fancyAlert(arg) {
 ## Tables
 
 ```markdown
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+| First Header                | Second Header                |
+| --------------------------- | ---------------------------- |
+| Content from cell 1         | Content from cell 2          |
+| Content in the first column | Content in the second column |
 ```
 
 ## Horizontal Rule
