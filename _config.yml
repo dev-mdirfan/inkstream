@@ -4,6 +4,7 @@
 exclude:
     - README.md
     - LICENSE
+    - CODE_OF_CONDUCT.md
     - CNAME
     - Gemfile
     - Gemfile.lock
@@ -14,10 +15,13 @@ exclude:
 plugins:
     - jekyll-paginate
     - jekyll-seo-tag
+    # - rouge does not work
+    # - kramdown
 
 # 3. Gem settings
 paginate: 5 # jekyll-paginate > items per page
 paginate_path: blog/:num # jekyll-paginate > blog page
+pinned: false # jekyll-seo-tag > pin the post to the top of the list
 author: MohdIrfan # jekyll-seo-tag > default author
 twitter:
     username: mohdirfan57 # jekyll-seo-tag > Owners twitter username
@@ -66,6 +70,7 @@ encoding: utf-8 # Make sure the encoding is right
 lang: en # Set the site language
 title: 'Inkstream' # Site name or title, also used in jekyll-seo-tag
 logo: '/assets/logo/logo.jpg' # Site logo, also used in jekyll-seo-tag
+home-bg: '/assets/images/home-bg.jpg' # Home background image
 description: 'Inkstream is a sleek and modern Jekyll theme tailored for bloggers seeking a seamless platform to express their ideas and stories. With its elegant design and intuitive features, Inkstream facilitates the continuous flow of content creation, empowering users to share their thoughts effortlessly.' # Site description and default description, also used in jekyll-seo-tag
 url: 'https://inkstream.netlify.app' # Site url, also used in jekyll-seo-tag
 baseurl: ''
