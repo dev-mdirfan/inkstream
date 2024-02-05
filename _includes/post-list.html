@@ -1,9 +1,47 @@
+{% if page.url == "/blog/" %}
+{% for post in site.posts %}
+{% if post.pinned == true %}
+{% capture words %}
+{{ post.content | number_of_words }}
+{% endcapture %}
+<div class="card my-4 shadow-lg">
+    <div class="d-flex justify-content-between">
+        <!-- pinned -->
+        <small class="text-muted position-absolute" style="top: 10px; left: 10px; z-index: 1;">
+            <span class="badge-warning rounded">📌 <strong>Pinned</strong> &nbsp;</span>
+        </small>
+        <img class="card-img-top" src="{{ post.image | relative_url }}" alt="{{ post.title }}"
+            style="width: 250px; object-fit: cover;">
+        <div class="card-body">
+            <h3 class="card-title">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </h3>
+            <p class="card-text">{{ post.excerpt | markdownify | truncatewords: 42 }}</p>
+            <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">Read more &rarr;</a>
+        </div>
+    </div>
+
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <span class="date">Published on {{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="comment"><a href="#">4 comments</a></span>
+        <span class="time align-content-end">
+            <i class="fas fa-clock fa-fw mr-1"></i>
+            {{ words | divided_by: 180 | append: ' min read' }} &bull;
+            {{ words }} words
+        </span>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
 {% if paginator.posts %}
 {% for page in paginator.posts %}
+{% unless page.pinned %}
 {% capture words %}
 {{ page.content | number_of_words }}
 {% endcapture %}
-<div class="card shadow-sm my-4">
+<div class="card my-4 shadow-lg">
     <div class="d-flex justify-content-between">
         <img class="card-img-top" src="{{ page.image | relative_url }}" alt="{{ page.title }}"
             style="width: 250px; object-fit: cover;">
@@ -21,11 +59,11 @@
         <span class="comment"><a href="#">4 comments</a></span>
         <span class="time align-content-end">
             <i class="fas fa-clock fa-fw mr-1"></i>{{ words | divided_by: 180 | append: ' min read' }} &bull; {{ words
-            }}
-            words
+            }} words
         </span>
     </div>
 </div>
+{% endunless %}
 {% endfor %}
 {% include post-pagination.html %}
 {% else %}
@@ -56,4 +94,5 @@
     </div>
 </div>
 {% endfor %}
+{% include post-pagination.html %}
 {% endif %}
