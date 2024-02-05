@@ -4,11 +4,13 @@ Welcome to a brand new Jekyll theme!
 
 **What Is Inkstream?**
 
-Inkstream is a Jekyll theme for creating a personal blog. It is a fork of the [Minima](https://github.com/dev-mdirfan/inkstream/fork) theme. It is designed to be a simple, clean, and responsive theme for your personal blog.
+Inkstream is a Jekyll theme for creating a personal blogging, embodying the fluidity of ink in the art of writing. It is designed to be a simple, clean, and responsive theme for your personal blog.
 
 Preview the theme to see what it looks like, or even use it today. You can also view the theme's [live demo](https://inkstream.netlify.app/).
 
-![Inkstream theme preview](/screenshot.png)
+| Home | Blog |
+|:---:|:---:|
+| ![Inkstream theme preview](/demo/home.png) | ![Inkstream theme preview](/demo/blog.png) |
 
 **Features**
 
