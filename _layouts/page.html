@@ -2,13 +2,32 @@
 layout: default
 ---
 
+<style>
+    .theme-bg-image {
+        background-image: url("{{ site.home-bg | relative_url }}");
+        /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover;
+        background-position: center;
+        /* shadow */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .theme-bg-image .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Adjust the alpha value to change the opacity of the background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Adjust the shadow as needed */
+    }
+</style>
+
 <!-- Header -->
 {% include site-header.html %}
 
 <!-- Main Wrapper Start -->
 <div class="main-wrapper">
-    <!-- Page Content -->
-    <section class="cta-section theme-bg-light py-5">
+    <section class="cta-section theme-bg-image py-5">
         <div class="container text-center">
             <h2 class="heading">Inkstream - Jekyll Blog Theme Made For Developers</h2>
             <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
