@@ -10,6 +10,7 @@ exclude:
     - Gemfile.lock
     - inkstream.gemspec
     - .jekyll-cache
+    - /demo/
 
 # 2. Installed Gems
 plugins:
