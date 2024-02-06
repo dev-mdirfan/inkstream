@@ -2,61 +2,17 @@
 <html lang="{{ site.lang | default: 'en' }}">
 
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Blog Template">
-	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-	<!-- Favicons -->
-	{% if site.favicons or site.avatarurl %}{% include site-favicons.html %}{% endif %}
-
-
-	{% if page.indexing == false %}
-	<meta name="robots" content="noindex">
-	{% endif %}
-
-	{% if page.collectionpage %}
-	{% seo title=false %}
-
-	{% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
-	<!-- Title -->
-	<title>{{ collectiondata.title }} | {{ site.title }}</title>
-	<meta property="og:title" content="{{ collectiondata.title }}">
-	<meta name="description" content="{{ collectiondata.description }}">
-	<meta property="og:description" content="{{ collectiondata.description }}">
-	{% else %}
-	{% seo %}
-	{% endif %}
-
-	<!-- FontAwesome JS-->
-	<!-- {% include site-fonts.html %} -->
-	<script src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
-		integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
-		crossorigin="anonymous">
-	</script>
-
-
-	{% if site.css_inline == true %}
-	{% include site-styles.html %}
-	{% else %}
-	<!-- Theme CSS -->
-	<link id="theme-style" rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-	{% endif %}
-
-	{% include site-before-start.html %}
+	{% include head.html %}
 </head>
 
 <body>
 
 	{{ content }}
 
-	{% include site-before-end.html %}
-	<!-- Javascript -->
-	<script src="{{ 'assets/plugins/jquery-3.3.1.min.js' | relative_url }}"></script>
-	<script src="{{'assets/plugins/popper.min.js' | relative_url  }}"></script>
-	<script src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
-
+	<!-- JavaScripts -->
+    {% include scripts/jquery.html %}
+	{% include scripts/popper.html %}
+	{% include scripts/bootstrap.html %}
 </body>
 
 </html>

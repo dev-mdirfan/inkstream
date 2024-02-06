@@ -1,5 +1,6 @@
 ---
 title: Home
+permalink: /
 ---
 
 **[Inkstream](https://github.com/dev-mdirfan/inkstream)** is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get rolling immediately. Install it, configure it, tweak it, push it.

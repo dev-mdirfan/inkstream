@@ -1,0 +1,36 @@
+<!-- Social List -->
+{% if site.social_links.linkedin_username %}
+<li class="list-inline-item">
+    <a href="https://www.linkedin.com/in/{{ site.social_links.linkedin_username }}" target="_blank">
+        <i class="fab fa-linkedin-in fa-fw"></i>
+    </a>
+</li>
+{% endif %}
+{% if site.social_links.github_username %}
+<li class="list-inline-item">
+    <a href="https://github.com/{{ site.social_links.github_username }}" target="_blank">
+        <i class="fab fa-github-alt fa-fw"></i>
+    </a>
+</li>
+{% endif %}
+{% if site.social_links.twitter_username %}
+<li class="list-inline-item">
+    <a href="https://twitter.com/{{ site.social_links.twitter_username }}" target="_blank">
+        <i class="fab fa-twitter fa-fw"></i>
+    </a>
+</li>
+{% endif %}
+{% if site.social_links.stackoverflow_username %}
+<li class="list-inline-item">
+    <a href="https://stackoverflow.com/users/{{ site.social_links.stackoverflow_username }}" target="_blank">
+        <i class="fab fa-stack-overflow fa-fw"></i>
+    </a>
+</li>
+{% endif %}
+{% if site.social_links.codepen_username %}
+<li class="list-inline-item">
+    <a href="https://codepen.io/{{ site.social_links.codepen_usernamen }}" target="_blank">
+        <i class="fab fa-codepen fa-fw"></i>
+    </a>
+</li>
+{% endif %}

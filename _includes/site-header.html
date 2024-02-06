@@ -9,47 +9,29 @@
         <div id="navigation" class="collapse navbar-collapse flex-column">
             <!-- Profile Section Start -->
             <div class="profile-section pt-3 pt-lg-0">
-                <img class="profile-image mb-3 rounded-circle mx-auto" src="{{ site.logo | relaive_url }}" alt="image">
-                <h3 class="blog-name pt-2 mb-3"><a href="{{ site.navigation_header[0].url }}">{{ site.title }}'s
-                        Blog</a></h3>
+                <a href="{{ site.navigation_header[0].url }}">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="{{ site.logo | relaive_url }}" alt="image">
+                </a>
+                <h3 class="blog-name pt-2 mb-3">
+                    <a href="{{ site.navigation_header[0].url }}">{{ site.user.name }}'s Blog</a>
+                </h3>
 
+                <!-- Bio Section Start-->
                 <div class="bio mb-3">
-                    Hi, my name is {{ site.author.name }}.
+                    Hi, my name is {{ site.user.name }}.
                     <p>
-                        {{ site.author.bio }}
+                        {{ site.user.bio }}
                     </p>
-                    <p>I am a {{ site.author.profession }}.</p>
+                    <p>I am a {{ site.user.profession }}.</p>
                     <p>
                         <strong>Email: &nbsp;</strong><a href="mailto:{{ site.email }}">
-                            {{ site.author.email }}
+                            {{ site.user.email }}
                         </a>
                     </p>
                 </div>
-                <!-- Bio Section Start-->
                 <ul class="social-list list-inline py-3 mx-auto">
-                    <!-- Social List -->
-                    {% if site.social_links.Twitter %}
-                    <li class="list-inline-item"><a href="{{ site.social_links.Twitter }}"><i
-                                class="fab fa-twitter fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if site.social_links.LinkedIn %}
-                    <li class="list-inline-item"><a href="{{ site.social_links.LinkedIn }}"><i
-                                class="fab fa-linkedin-in fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if site.social_links.Github %}
-                    <li class="list-inline-item"><a href="{{ site.social_links.GitHub }}"><i
-                                class="fab fa-github-alt fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if site.social_links.Stackoverflow %}
-                    <li class="list-inline-item"><a href="{{ site.social_links.Stackoverflow }}"><i
-                                class="fab fa-stack-overflow fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if site.social_links.Codepen %}
-                    <li class="list-inline-item"><a href="{{ site.social_links.Codepen }}"><i
-                                class="fab fa-codepen fa-fw"></i></a></li>
-                    {% endif %}
+                    {% include social.html %}
                 </ul>
-                <!-- Bio Section end-->
                 <hr style="background: white;">
             </div>
             <!-- Profile Section End-->

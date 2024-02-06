@@ -1,6 +1,76 @@
-### Site Configuration ###
+# =================================================================================
+# Site Configuration
+# =================================================================================
 
-# 1. Files excluded from Jekyll builds
+title               :   blank                           # The site title (if blank, full name will be used instead)
+full_name           :   Your Full Name                  # The full site name (if blank, title will be used instead)
+email               :   'your@gmail.com'                # Your email address
+lang                :   en                              # Site language (en for English)
+encoding            :   utf-8                           # Site encoding (utf-8 for Unicode)
+icon                :   '/assets/favicon/favicon.ico'   # Site favicon
+logo                :   '/assets/logo/logo.jpg'         # Site logo, also used in jekyll-seo-tag
+home-bg             :   '/assets/images/home-bg.jpg'    # Home background image
+url                 :   'https://inkstream.netlify.app' # Site URL (if using a custom domain)
+baseurl             :   ''                              # Site base URL (add if site is not at root)
+repo                :   'https://github.com/dev-mdirfan/inkstream' # Site repository, also used in jekyll-seo-tag
+description         :   > # Site description and default description, also used in jekyll-seo-tag
+    A minimal, responsive, and fast Jekyll theme for personal blogs and portfolios.
+keywords            :   > # For SEO
+    jekyll, theme, minimal, responsive, blog, portfolio, fast, seo, social, web, development
+footer_text         :   '© 2021 Inkstream'  # Footer text
+
+
+
+# =================================================================================
+# Theme Settings
+# =================================================================================
+
+# ---
+
+
+
+
+# =================================================================================
+# Social Integration
+# =================================================================================
+
+social_links: # Leave blank according to your need
+    linkedin_username       :   mdirfan57               # Your LinkedIn username
+    github_username         :   dev-mdirfan             # Your GitHub username
+    twitter_username        :   mohdirfan57             # Your Twitter username
+    stackoveflow_username   :   13520260/mohd-irfan     # Your Stackoverflow username
+    codepen_username        :   mohdirfan57             # Your Codepen username
+
+user:
+    name        :   Sarah Parker                # Your name (required)
+    bio         :   'A passionate web developer and designer.'    # Short bio, You can also provide a links.
+    profession  :   'Web Developer'             # Your profession (optional)
+    location    :   'India'                     # Your location (optional)
+    email       :   your@gmail.com              # Your email address (optional)
+
+download_resume: '/assets/resume/resume.pdf'    # Add the path to your resume
+
+
+
+# =================================================================================
+# Jekyll Settings
+# =================================================================================
+
+# Markdown and syntax highlight
+markdown: kramdown
+highlighter: rouge
+kramdown:
+    input: GFM
+    syntax_highlighter_opts:
+        css_class: "highlight"
+        span:
+            line_numbers: false
+        block:
+            line_numbers: false
+            start_line: 1
+
+# Includes & excludes
+include: ["_pages", "blog", "_posts"]
 exclude:
     - README.md
     - LICENSE
@@ -11,19 +81,70 @@ exclude:
     - inkstream.gemspec
     - .jekyll-cache
     - /demo/
+    # - CONTRIBUTING.md
+    # - INSTALL.md
 
-# 2. Installed Gems
+# Plugins
 plugins:
     - jekyll-paginate
     - jekyll-seo-tag
-    # - rouge does not work
-    # - kramdown
 
-# 3. Gem settings
-paginate: 5 # jekyll-paginate > items per page
-paginate_path: blog/:num # jekyll-paginate > blog page
-pinned: false # jekyll-seo-tag > pin the post to the top of the list
-author: MohdIrfan # jekyll-seo-tag > default author
+# Defaults
+defaults:
+    - # Page settings
+        scope:
+            path: ""
+            type: "pages"
+        values:
+            layout: "page"
+    - # Post settings
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+    -
+        scope:
+            path: ""
+        values:
+            image: '/assets/images/posts/default-post-img.jpg' # Default post image
+    # - # Sitemap settings
+    #     scope:
+    #         path: "assets"
+    #     values:
+    #         sitemap: false
+
+
+
+# =================================================================================
+# Site Navigation
+# =================================================================================
+
+# Nav Links
+navigation_header:
+    -
+        title: Home
+        url: /
+        icon: home
+    -
+        title: Blog
+        url: /blog/
+        icon: blog
+    -
+        title: About Me
+        url: /about/
+        icon: user
+
+navigation_footer:
+    -
+        title: Mohd Irfan
+        url: https://github.com/dev-mdirfan/
+
+# Gem settings (jekyll-paginate, jekyll-seo-tag)
+paginate            : 5         # jekyll-paginate > items per page
+paginate_path       : blog/:num # jekyll-paginate > blog page
+pinned              : false     # jekyll-seo-tag > pin the post to the top of the list
+author              : MohdIrfan # jekyll-seo-tag > default author
 twitter:
     username: mohdirfan57 # jekyll-seo-tag > Owners twitter username
 social: # jekyll-seo-tag > social overrides
@@ -49,37 +170,6 @@ collections:
         pin: true # Pin the post to the top of the list
         image: 'https://picsum.photos/2560/600?image=866'
 
-# 6. Jekyll defaults
-defaults:
-    - scope:
-          path: ''
-      values:
-          image: '/assets/images/posts/default-post-img.jpg' # Default image for sharing
-    - scope:
-          path: ''
-          type: 'posts'
-      values:
-          layout: post # Set the default layout for posts
-    - scope:
-          path: ''
-          type: 'pages'
-      values:
-          layout: page # Set the default layout for pages
-
-# 7. Site settings
-encoding: utf-8 # Make sure the encoding is right
-lang: en # Set the site language
-title: 'Inkstream' # Site name or title, also used in jekyll-seo-tag
-logo: '/assets/logo/logo.jpg' # Site logo, also used in jekyll-seo-tag
-home-bg: '/assets/images/home-bg.jpg' # Home background image
-description: 'Inkstream is a sleek and modern Jekyll theme tailored for bloggers seeking a seamless platform to express their ideas and stories. With its elegant design and intuitive features, Inkstream facilitates the continuous flow of content creation, empowering users to share their thoughts effortlessly.' # Site description and default description, also used in jekyll-seo-tag
-url: 'https://inkstream.netlify.app' # Site url, also used in jekyll-seo-tag
-baseurl: ''
-repo: 'https://github.com/dev-mdirfan/inkstream' # Site repository, also used in jekyll-seo-tag
-email: 'mdirfan5702@gmail.com'
-# short_name: "Al" # The web application short name, defaults to the site title
-css_inline: false # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
-
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
     '16': '/assets/favicon/favicon-16x16.png'
@@ -91,39 +181,7 @@ favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
     webmanifest: '/assets/favicon/site.webmanifest'
     safari: '/assets/favicon/safari-pinned-tab.svg'
 
-# 9. Site navigation
-navigation_header:
-    - title: Home
-      url: /
-      icon: home
-    - title: Blog
-      url: /blog/
-      icon: blog
-    - title: About Me
-      url: /about/
-      icon: user
 
-navigation_footer:
-    - title: Mohd Irfan
-      url: https://github.com/dev-mdirfan/
-
-# 10. Your Personal Info (Social links - Appears in sidebar)
-author:
-    name: Sarah Parker # Your name (required)
-    bio: 'A passionate web developer and designer.' # Short bio or description, You can also provide a link to the about page. (required)
-    profession: 'Web Developer' # Your profession (optional)
-    location: 'India' # Your location (optional)
-    email: your@gmail.com # Your email address (optional)
-social_links: # Set the urls then uncomment and comment out as desired
-    Twitter: https://twitter.com/mohdirfan57
-    LinkedIn: https://www.linkedin.com/in/mdirfan57
-    GitHub: https://github.com/dev-mdirfan
-    Stackoverflow: https://stackoverflow.com/users/13520260/mohd-irfan
-    Codepen: https://codepen.io/mohdirfan57
-download_resume: '/assets/resume/resume.pdf' # Add the path to your resume
-# sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
-#     Twitter: '#0d94e7'
-#     facebook: '#3B5998'
 #     Email: true
 
 # # Load custom fonts from fonts.google.com etc
